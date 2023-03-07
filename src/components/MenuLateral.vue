@@ -14,7 +14,7 @@
             <v-list-item prepend-icon="mdi-clock-start" title="Clock-in" value="clockin"></v-list-item>
           </v-list>
         </v-navigation-drawer>
-        <v-main style="color: black; height: 200px;"></v-main>
+        <v-main style="color: black; height: auto; max-height: 100%"></v-main>
       </v-layout>
     </v-card>
   </template>
