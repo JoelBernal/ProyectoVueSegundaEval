@@ -1,13 +1,20 @@
 <template>
+    <div>
+        <v-app-bar :elevation="2">
+            <h1>Hola</h1>
+            <v-avatar color="surface-variant">
+                
+            </v-avatar>
+        </v-app-bar>
+    </div>
+  </template>
   
-</template>
-
-<script>
-export default {
-    name: "navBar"
-}
-</script>
-
-<style>
-
-</style>
+  <script>
+    export default {
+      name: 'Navbar',
+  
+      data: () => ({
+      }),
+    }
+  </script>
+  
