@@ -5,13 +5,35 @@
       <div class="MenuClass">
         <MenuLateral></MenuLateral>
       </div>
-      <div>
-        <Cards></Cards>
-        <Cards></Cards>
-        <Cards></Cards>
-        <Cards></Cards>
-        <Cards></Cards>
-        
+      <div style="display:flex; flex-direction:column; gap: 50px">
+        <div style="display: flex; gap: 30px ">
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+        </div>
+        <div style="display: flex; ">
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+        </div>
+        <div style="display: flex; ">
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+        </div>
+        <div style="display: flex; ">
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+        </div>
       </div>
     </div>
   </div>
@@ -36,9 +58,9 @@ export default {
 </script>
  
 <style>
-    .MenuClass{
-            height: auto;
-    max-height: 100%;
-    }
+.MenuClass {
+  height: auto;
+  max-height: 100%;
+}
 </style>
  

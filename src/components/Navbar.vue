@@ -1,43 +1,55 @@
-<template>
-  <div class="NavbarDiv">
-    <v-app-var class="appbar">
-      <div>
-        <h1>HOLA</h1>
-      </div>
 
-      <div style="display: flex">
-        <v-btn
-          v-for="link in links"
-          :key="link"
-          color="white"
-          variant="text"
-          class="mx-2"
-          rounded="xl"
-        >{{ link }}</v-btn>
-      </div>
-    </v-app-var>
-  </div>
+
+<template>
+  <v-app>
+    <v-app-bar color="green" class="flex-grow-0" app dark>
+      <v-app-bar-title>Coding Beauty</v-app-bar-title>
+    </v-app-bar>
+    <!-- <v-navigation-drawer app>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="text-h6"> NOMBRE PAGINA </v-list-item-title>
+          <v-list-item-subtitle> Navigation drawers</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-list dense nav>
+        <v-list-item v-for="item in items" :key="item.title" link>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer> -->
+  </v-app>
 </template>
-  
+
 <script>
 export default {
-  name: "Navbar",
+  name: 'App',
   data: () => ({
-    links: ["Home", "About Us", "Services", "Contact Us"],
+    items: [
+      { title: 'Dashboard', icon: 'mdi-view-dashboard' },
+      { title: 'Account', icon: 'mdi-account-box' },
+      { title: 'Settings', icon: 'mdi-cog' },
+    ],
   }),
 };
 </script>
 
 <style>
-.NavbarDiv {
-  display: flex;
-  width: 100%;
-}
-.appbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 65%;
+.v-application--wrap {
+    flex: 1 1 auto;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height:6vh;
+    max-width: 100%;
+    position: relative;
 }
 </style>
 
