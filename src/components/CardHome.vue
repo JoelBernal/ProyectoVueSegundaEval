@@ -1,41 +1,27 @@
 <template>
-    <v-sheet
-      class="mx-auto"
-      elevation="8"
-      max-width="800"
-    >
-      <v-slide-group
-        v-model="model"
-        class="pa-4"
-        selected-class="bg-success"
-        show-arrows
-      >
-        <v-slide-group-item
-          v-for="n in 15"
-          :key="n"
-          v-slot="{ isSelected, toggle, selectedClass }"
-        >
-          <v-card
-            color="grey-lighten-1"
-            :class="['ma-4', selectedClass]"
-            height="200"
-            width="100"
-            @click="toggle"
-          >
-            <div class="d-flex fill-height align-center justify-center">
-              <v-scale-transition>
-                <v-icon
-                  v-if="isSelected"
-                  color="white"
-                  size="48"
-                  icon="mdi-close-circle-outline"
-                ></v-icon>
-              </v-scale-transition>
-            </div>
-          </v-card>
-        </v-slide-group-item>
-      </v-slide-group>
-    </v-sheet>
+    <div style="display: flex;">
+      <v-item-group selected-class="bg-primary">
+      <v-container>
+        <v-row>
+          <v-col v-for="n in 1" :key="n" cols="12" md="12">
+            <v-item v-slot="{ isSelected, selectedClass, toggle }">
+              <v-card
+                :class="['d-flex align-center', selectedClass]"
+                dark
+                height="400"
+                width="100%"
+                @click="toggle"
+              >
+                <div
+                  class="text-h3 flex-grow-1 text-center"
+                >{{ isSelected ? 'Selected' : 'Angel Cabron!' }}</div>
+              </v-card>
+            </v-item>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-item-group>
+    </div>
   </template>
   
 <script>

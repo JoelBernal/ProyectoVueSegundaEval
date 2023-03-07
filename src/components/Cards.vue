@@ -1,17 +1,44 @@
 <template>
-    <MDBCard>
-      <MDBCardImg
-        src="https://mdbootstrap.com/img/new/standard/nature/184.webp"
-        top
-        alt="..."
-      />
-      <MDBCardBody>
-        <MDBCardTitle>Card title</MDBCardTitle>
-        <MDBCardText>
-          Some quick example text to build on the card title and make up the bulk of the
-          card's content.
-        </MDBCardText>
-        <MDBBtn tag="a" href="#!" color="primary">Button</MDBBtn>
-      </MDBCardBody>
-    </MDBCard>
-  </template>
+  <v-card
+    class="mx-auto"
+    max-width="400"
+  >
+    <v-img
+      class="align-end text-white"
+      height="200"
+      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+      cover
+    >
+      <v-card-title>Top 10 Australian beaches</v-card-title>
+    </v-img>
+
+    <v-card-subtitle class="pt-4">
+      Number 10
+    </v-card-subtitle>
+
+    <v-card-text>
+      <div>Whitehaven Beach</div>
+
+      <div>Whitsunday Island, Whitsunday Islands</div>
+    </v-card-text>
+
+    <v-card-actions>
+      <v-btn color="orange">
+        Share
+      </v-btn>
+
+      <v-btn color="orange">
+        Explore
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+</template>
+
+<script>
+export default {
+  name: 'Cards',
+
+  data: () => ({
+  }),
+}
+</script>
