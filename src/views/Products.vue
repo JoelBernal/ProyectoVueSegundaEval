@@ -1,11 +1,21 @@
 <template>
   <div>
-    <Navbar />
+    <div>
+      <Navbar />
+    </div>
+
     <div style="display: flex;">
       <div class="MenuClass">
         <MenuLateral></MenuLateral>
       </div>
-      <div style="display:flex; flex-direction:column; gap: 50px">
+      <div style="display:flex; flex-direction:column; gap: 50px; margin-left: 15%">
+        <div style="display: flex; gap: 30px; margin-top: 35px ">
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+        </div>
         <div style="display: flex; gap: 30px ">
           <Cards></Cards>
           <Cards></Cards>
@@ -13,21 +23,14 @@
           <Cards></Cards>
           <Cards></Cards>
         </div>
-        <div style="display: flex; ">
+        <div style="display: flex; gap: 30px ">
           <Cards></Cards>
           <Cards></Cards>
           <Cards></Cards>
           <Cards></Cards>
           <Cards></Cards>
         </div>
-        <div style="display: flex; ">
-          <Cards></Cards>
-          <Cards></Cards>
-          <Cards></Cards>
-          <Cards></Cards>
-          <Cards></Cards>
-        </div>
-        <div style="display: flex; ">
+        <div style="display: flex; gap: 30px ">
           <Cards></Cards>
           <Cards></Cards>
           <Cards></Cards>

@@ -37,4 +37,17 @@ export default {
 .v-item-group {
   width: 100%;
 }
+
+.container {
+    width: 100%;
+    padding: 12px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1264px){
+.container {
+    max-width: 100%;
+}
+}
 </style>
