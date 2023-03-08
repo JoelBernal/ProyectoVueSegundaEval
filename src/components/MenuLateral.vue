@@ -2,10 +2,7 @@
 
 <template>
   <v-app class="menuDiv">
-    <v-app-bar color="green" class="flex-grow-0" app dark>
-      <v-app-bar-title>Coding Beauty</v-app-bar-title>
-    </v-app-bar>
-    <v-navigation-drawer permanent app>
+    <v-navigation-drawer app>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="text-h6"> NOMBRE PAGINA </v-list-item-title>
