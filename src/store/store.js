@@ -1,27 +1,34 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    datos: []
-  },
-  mutations: {
-    setDatos(state, datos) {
-      state.datos = datos
-    }
-  },
-  actions: {
-    async fetchDatos({ commit }) {
-      try {
-        const response = await fetch('https://rickandmortyapi.com/api/character')
-        const data = await response.json()
-        commit('setDatos', data)
-      } catch (error) {
-        console.error(error)
-      }
-    }
-  }
-})
+    state: {
+        games: [],
+    },
+    mutations: {
+        initGames(state, games) {
+            state.games = games;
+        },
+    },
+    actions: {
+        async fetchGames({ commit }) {
+            try {
+                let res = await fetch('https://rickandmortyapi.com/api/character');
+                let data = await res.json();
+                console.log(data);
+                commit("initGames", data);
+            } catch (error) {
+                console.error(error);
+            }
+        },
+    },
+    getters: {
+        getGames(state) {
+            return state.games;
+        },
+    },
+    modules: {},
+});
 
