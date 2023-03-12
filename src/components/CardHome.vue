@@ -67,7 +67,7 @@ export default {
         
         <!-- Fila 2 -->
         <v-row>
-          <v-col cols="12" v-for="card in rows[1].cards" :key="card.id">
+          <v-col cols="12" v-for="(card, index) in rows[1].cards" :key="'card-' + index">
             <v-item v-slot="{ isSelected, selectedClass, toggle }">
               <v-card 
                 :class="['d-flex align-center', selectedClass]"
@@ -79,7 +79,7 @@ export default {
                 <div class="card-text">
                   {{ isSelected ? 'Selected' : 'Product Name!' }}
                 </div>
-                <img :src="card.image" :key="card.id" height="100%" width="100%">
+                <img :src="card.image" height="100%" width="100%">
               </v-card>
             </v-item>
           </v-col>

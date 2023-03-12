@@ -1,40 +1,27 @@
-{/* <template>
-  <v-container>
-    <v-row>
-      <v-col>
-        <v-card>
-          <v-card-title>
-            <h1>{{ count }}</h1>
-          </v-card-title>
-          <v-card-actions>
-            <v-btn color="primary" @click="increment">Increment</v-btn>
-            <v-btn color="primary" @click="decrement">Decrement</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
-</template>
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-<script>
-import { mapState, mapMutations } from 'vuex';
-import { VContainer, VRow, VCol, VCard, VCardTitle, VCardActions, VBtn } from 'vuetify/lib';
+Vue.use(Vuex)
 
-export default {
-  components: {
-    VContainer,
-    VRow,
-    VCol,
-    VCard,
-    VCardTitle,
-    VCardActions,
-    VBtn
+export default new Vuex.Store({
+  state: {
+    datos: []
   },
-  computed: {
-    ...mapState(['count'])
+  mutations: {
+    setDatos(state, datos) {
+      state.datos = datos
+    }
   },
-  methods: {
-    ...mapMutations(['increment', 'decrement'])
+  actions: {
+    async fetchDatos({ commit }) {
+      try {
+        const response = await fetch('https://rickandmortyapi.com/api/character')
+        const data = await response.json()
+        commit('setDatos', data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
   }
-};
-</script> */}
+})
+
