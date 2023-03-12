@@ -26,7 +26,6 @@ export default {
 
 <style>
 .v-item-group {
-  align-content: center;
-  
 }
+
 </style>

@@ -2,11 +2,24 @@
   <div>
     <Navbar />
     <Carrusel />
-    <div style="display: flex; justify-content: space-evenly;">
-      <CardHome style="width: 50%" />
-      <CardHome style="width: 50%"/>
+    <div style="display: flex; justify-content: space-evenly; flex-direction: column;">
+      <div style="display: flex; justify-content: center; margin-top: 10px; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px;">
+        <h1>LO MAS VENDIDO</h1>
+      </div>
+      <div style="display: flex;">
+        <div></div>
+        <CardHome style="width: 50%" />
+        <CardHome style="width: 50%" />
+      </div>
+      <div style="display: flex; justify-content: center; margin-top: 10px; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 20px;">
+        <h1>OFERTAS SEMANALES</h1>
+      </div>
+      <div>
+        <CardHome style="width: 100%;" />
+      </div>
+      
     </div>
-    <CardHome style="width: 100%;"/>
+    
 
     <Footer />
   </div>
@@ -30,5 +43,4 @@ export default {
 </script>
 
 
-<style>
-</style>
+<style></style>

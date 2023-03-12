@@ -64,7 +64,6 @@ export default {
   <div class="divGeneral" style="display: flex;">
     <v-item-group selected-class="bg-primary">
       <v-container>
-        
         <!-- Fila 2 -->
         <v-row>
           <v-col cols="12" v-for="(card, index) in rows[1].cards" :key="'card-' + index">
@@ -77,7 +76,7 @@ export default {
                 @click="toggle"
               >
                 <div class="card-text">
-                  {{ isSelected ? 'Selected' : 'Product Name!' }}
+                  {{ isSelected ? 'Selected' : card.text }}
                 </div>
                 <img :src="card.image" height="100%" width="100%">
               </v-card>
@@ -98,14 +97,14 @@ export default {
         {
           id: 1,
           cards: [
-            { id: 1, image: 'https://www.dzoom.org.es/wp-content/uploads/2010/09/paisaje-profundidad-lineas-734x489.jpg' },
-            { id: 2, image: 'https://i.blogs.es/4f0662/consejos-foto-movil-01/1366_2000.jpg' },
+            { id: 1, image: 'https://www.dzoom.org.es/wp-content/uploads/2010/09/paisaje-profundidad-lineas-734x489.jpg', text: 'Hola' },
+            { id: 2, image: 'https://i.blogs.es/4f0662/consejos-foto-movil-01/1366_2000.jpg', text: 'Adios' },
           ]
         },
         {
           id: 2,
           cards: [
-            { id: 3, image: 'http://2.bp.blogspot.com/-_gQsO8DRHhY/VdvXpJgTPyI/AAAAAAAAszE/YEN6oYn2Zi4/s1600/Captura%2Bde%2Bpantalla%2B2015-08-24%2Ba%2Blas%2B21.48.12.png' },
+            { id: 3, image: 'https://assets.brightspot.abebooks.a2z.com/dims4/default/56117b2/2147483647/strip/true/crop/1240x930+0+0/resize/800x600!/format/jpg/quality/90/?url=http%3A%2F%2Fabebooks-brightspot.s3.amazonaws.com%2F1b%2Ff7%2F4aa3eed34488bdf8b20700c1c3b5%2Flrg-promo-rare-directory.jpg', text: 'Nombre del Libro' },
           ]
         },
       ],
@@ -114,6 +113,7 @@ export default {
   },
 };
 </script>
+
 
 <style>
 .v-item-group {
