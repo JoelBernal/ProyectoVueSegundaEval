@@ -14,17 +14,8 @@
           <Cards></Cards>
           <Cards></Cards>
           <Cards></Cards>
-          <Cards></Cards>
         </div>
         <div style="display: flex; gap: 30px ">
-          <Cards></Cards>
-          <Cards></Cards>
-          <Cards></Cards>
-          <Cards></Cards>
-          <Cards></Cards>
-        </div>
-        <div style="display: flex; gap: 30px ">
-          <Cards></Cards>
           <Cards></Cards>
           <Cards></Cards>
           <Cards></Cards>
@@ -32,6 +23,10 @@
         </div>
         <div style="display: flex; gap: 30px ">
           <Cards></Cards>
+          <Cards></Cards>
+          <Cards></Cards>
+        </div>
+        <div style="display: flex; gap: 30px ">
           <Cards></Cards>
           <Cards></Cards>
           <Cards></Cards>

@@ -23,8 +23,8 @@ export default {
         { title: "Products", path: "/products", icon: "products" },
         { title: "Abous Us", path: "/Abous Us", icon: "Abous Us" },
         { title: "Contact Us", path: "/Contact Us", icon: "Contact Us" },
-        { title: "Sign Up", path: "/login", icon: "face" },
-        { title: "Sign In", path: "/signin", icon: "lock_open" },
+        { title: "Sign In", path: "/login", icon: "face" },
+        { title: "Sign Up", path: "/signin", icon: "lock_open" },
       ],
     };
   },
