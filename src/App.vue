@@ -6,12 +6,21 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   name: 'App',
   components: {},
-  // data: () => ({
-  //   datos: []
-  // }),
+  created(){
+    this.fetchLibros();
+  },
+
+  methods:{
+    ...mapActions(['fetchLibros'])
+  },
+
+   data: () => ({
+     datos: []
+   }),
   // mounted() {
   //   fetch('https://rickandmortyapi.com/api/character')
   //     .then(response => response.json())

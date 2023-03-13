@@ -1,10 +1,12 @@
 <template>
   <v-container fluid>
+    <button id="orden" @click="fetchOrdenarLibros"> Ordenar por Precio </button>
     <v-row no-gutters>
-      <v-col v-for="(item, index) in data" :key="index" cols="12" sm="4">
-        <v-card style="margin-bottom: 30px;" class="mx-auto" max-width="400" tile>
+      <v-col v-for="(item) in libro" :key="item" cols="12" sm="15">
+        <v-card id="tarjeta" style="margin-bottom: 30px; " class="mx-auto" max-width="400" tile>
           <v-img class="align-end text-white" height="200" :src="item.image" cover>
-            <v-card-title>{{ item.autor }}</v-card-title>
+            <img src="https://tse4.mm.bing.net/th?id=OIP.Yhvj0zPqOsS3B2ZFeha44gAAAA&pid=Api&P=0" alt="foto libros">
+            <v-card-title>{{ item.titulo }}</v-card-title>
           </v-img>
           <v-card-subtitle class="pt-4">Fecha de publicacion: {{ item.fechaPublicacion }}</v-card-subtitle>
 
@@ -25,22 +27,23 @@
 </template>
 
 <script>
+import store from "@/store/store.js"
+import { mapState, mapActions } from 'vuex';
+
 export default {
   name: "Cards",
-  data() {
-    return {
-      data: { results: [] }
-    };
+  methods:{
+    ...mapActions([store.dispatch("fetchLibros")])
   },
-  mounted() {
-    fetch("https://localhost:7222/Libros/GetDatosBBDD")
-      .then((response) => response.json())
-      .then((data) => {
-        this.data = data;
-        console.log(this.data); // para verificar que se ha obtenido los datos correctamente
-      })
-      .catch((error) => console.error(error));
+
+  computed:{
+    user(){
+      return this.libro
+    },
+    ...mapState(["libro"])
   },
+
+
 };
 </script>
 
@@ -54,4 +57,18 @@ export default {
     font-size: 12px;
   }
 }
+
+.div.container.container--fluid{
+  margin-left: 300px
+
+}
+
+#orden{
+  background-color: #80461b !important;
+  border-radius: 3px;
+  color: white;
+  margin-left: 100px;
+  height: 30px;
+}
+
 </style>
