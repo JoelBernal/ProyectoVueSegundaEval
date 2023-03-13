@@ -1,47 +1,22 @@
-<!-- <template>
-  <v-container fluid>
-    <v-row no-gutters>
-      <v-col v-for="(item, index) in data.results" :key="index" cols="12" sm="4">
-        <v-card style="margin-bottom: 30px;" class="mx-auto" max-width="400" tile>
-          <v-img class="align-end text-white" height="200" :src="item.image" cover>
-            <v-card-title>{{ item.name }}</v-card-title>
-          </v-img>
-
-          <v-card-subtitle class="pt-4">{{ item.species }}</v-card-subtitle>
-
-          <v-card-text>
-            <div>Status: {{ item.status }}</div>
-            <div>Location: {{ item.location.name }}</div>
-          </v-card-text>
-
-          <v-card-actions>
-            <v-btn color="orange">Comprar</v-btn>
-            <v-btn color="orange">Eliminar</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
-</template> -->
-
 <template>
   <v-container fluid>
     <v-row no-gutters>
-      <v-col v-for="(item, index) in data.results" :key="index" cols="12" sm="4">
+      <v-col v-for="(item, index) in data" :key="index" cols="12" sm="4">
         <v-card style="margin-bottom: 30px;" class="mx-auto" max-width="400" tile>
           <v-img class="align-end text-white" height="200" :src="item.image" cover>
-            <v-card-title>{{ item.name }}</v-card-title>
+            <v-card-title>{{ item.autor }}</v-card-title>
           </v-img>
-          <v-card-subtitle class="pt-4">{{ item.species }}</v-card-subtitle>
+          <v-card-subtitle class="pt-4">Fecha de publicacion: {{ item.fechaPublicacion }}</v-card-subtitle>
 
           <v-card-text>
-            <div>Status: {{ item.status }}</div>
-            <div>Location: {{ item.location.name }}</div>
+            <div>Autor: {{ item.autor  }}</div>
+            <div>Paginas: {{ item.paginas }}</div>
+            <div>Precio: {{ item.precio }}</div>
           </v-card-text>
 
           <v-card-actions>
             <v-btn color="orange">Comprar</v-btn>
-            <v-btn color="orange" @click="deleteItem(item.id)">Eliminar</v-btn>
+            <!-- <v-btn color="orange" @click="deleteItem(data.id)">Eliminar</v-btn> -->
           </v-card-actions>
         </v-card>
       </v-col>
@@ -58,7 +33,7 @@ export default {
     };
   },
   mounted() {
-    fetch("https://rickandmortyapi.com/api/character")
+    fetch("https://localhost:7222/Libros/GetDatosBBDD")
       .then((response) => response.json())
       .then((data) => {
         this.data = data;

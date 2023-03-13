@@ -15,7 +15,7 @@ export default new Vuex.Store({
     actions: {
         async fetchGames({ commit }) {
             try {
-                let res = await fetch('https://rickandmortyapi.com/api/character');
+                let res = await fetch('https://localhost:7222/Libros/GetDatosBBDD');
                 let data = await res.json();
                 console.log(data);
                 commit("initGames", data);
