@@ -147,4 +147,8 @@ export default {
   align-items: center;
   height: 100vh;
 }
+
+.v-main{
+  padding: 0px;
+}
 </style>

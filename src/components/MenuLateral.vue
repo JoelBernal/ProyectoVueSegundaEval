@@ -1,5 +1,3 @@
-
-
 <template>
   <v-app class="menuDiv">
     <v-navigation-drawer app>
@@ -21,23 +19,25 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <LibrosForm></LibrosForm>
     </v-navigation-drawer>
   </v-app>
 </template>
 
 <script>
+import LibrosForm from './librosForm.vue';
+
 export default {
-  name: 'App',
-  data: () => ({
-    items: [
-      { title: 'Librerias', icon: 'mdi-view-dashboard' },
-      { title: 'Libros', icon: 'mdi-account-box' },
-      { title: 'Ajustes', icon: 'mdi-cog' },
-    ],
-  }),
+    name: "App",
+    data: () => ({
+        items: [
+            { title: "Libros", icon: "mdi-book" },
+            { title: "Librerias", icon: "mdi-view-dashboard" },
+            { title: "Ajustes", icon: "mdi-cog" },
+        ],
+    }),
+    components: { LibrosForm }
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

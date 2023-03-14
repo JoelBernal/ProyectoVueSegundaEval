@@ -7,7 +7,6 @@
         <h1>LO MAS VENDIDO</h1>
       </div>
       <div style="display: flex;">
-        <div></div>
         <CardHome style="width: 50%" />
         <CardHome style="width: 50%" />
       </div>

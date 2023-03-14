@@ -5,14 +5,14 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-       libro: []
+        libro: []
     },
     mutations: {
-        initLibro(state,libro) {
-            state.libro =libro;
+        initLibro(state, libro) {
+            state.libro = libro;
         },
-        initOrdenarLibro(state,libro) {
-            state.libroOrdenar =libro;
+        initOrdenarLibro(state, libro) {
+            state.libroOrdenar = libro;
         },
     },
     actions: {
@@ -20,31 +20,32 @@ export default new Vuex.Store({
 
             fetch('https://localhost:7222/Libros/GetDatosBBDD')
 
-             .then(response => response.json())
+                .then(response => response.json())
 
-             .then(response => {
+                .then(response => {
 
-               commit("initLibro", response)
+                    commit("initLibro", response)
 
-             })
-             
-    },
+                })
 
-    fetchOrdenarLibros({ commit }) {
+        },
 
-        fetch('https://localhost:7222/Libros/OrdenarPorPrecio-BBDD')
+        fetchOrdenarLibros({ commit }) {
 
-         .then(response => response.json())
+            fetch('https://localhost:7222/Libros/OrdenarPorPrecio-BBDD')
 
-         .then(response => {
+                .then(response => response.json())
 
-           commit("initOrdenarLibro", response)
+                .then(response => {
 
-         })
-         
-},
-  
-    
-}, modules: {}});
+                    commit("initOrdenarLibro", response)
+
+                })
+
+        },
+
+
+    }, modules: {}
+});
 
 

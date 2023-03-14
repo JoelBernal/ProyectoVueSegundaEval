@@ -11,28 +11,7 @@
       <div style="display:flex; flex-direction:column; gap: 50px; margin-left: 15%">
         <div style="display: flex; gap: 30px; margin-top: 35px ">
           <Cards></Cards>
-          <!-- <Cards></Cards>
-          <Cards></Cards>
-          <Cards></Cards> -->
         </div>
-        <!-- <div style="display: flex; gap: 30px ">
-          <Cards></Cards>
-          <Cards></Cards>
-          <Cards></Cards>
-          <Cards></Cards>
-        </div>
-        <div style="display: flex; gap: 30px ">
-          <Cards></Cards>
-          <Cards></Cards>
-          <Cards></Cards>
-          <Cards></Cards>
-        </div>
-        <div style="display: flex; gap: 30px ">
-          <Cards></Cards>
-          <Cards></Cards>
-          <Cards></Cards>
-          <Cards></Cards>
-        </div> -->
       </div>
     </div>
   </div>

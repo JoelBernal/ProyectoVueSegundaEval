@@ -11,14 +11,13 @@
           <v-card-subtitle class="pt-4">Fecha de publicacion: {{ item.fechaPublicacion }}</v-card-subtitle>
 
           <v-card-text>
-            <div>Autor: {{ item.autor  }}</div>
+            <div>Autor: {{ item.autor }}</div>
             <div>Paginas: {{ item.paginas }}</div>
             <div>Precio: {{ item.precio }}</div>
           </v-card-text>
 
           <v-card-actions>
             <v-btn color="orange">Comprar</v-btn>
-            <!-- <v-btn color="orange" @click="deleteItem(data.id)">Eliminar</v-btn> -->
           </v-card-actions>
         </v-card>
       </v-col>
@@ -32,12 +31,12 @@ import { mapState, mapActions } from 'vuex';
 
 export default {
   name: "Cards",
-  methods:{
+  methods: {
     ...mapActions([store.dispatch("fetchLibros")])
   },
 
-  computed:{
-    user(){
+  computed: {
+    user() {
       return this.libro
     },
     ...mapState(["libro"])
@@ -58,17 +57,26 @@ export default {
   }
 }
 
-.div.container.container--fluid{
+.div.container.container--fluid {
   margin-left: 300px
-
 }
 
-#orden{
-  background-color: #80461b !important;
-  border-radius: 3px;
-  color: white;
-  margin-left: 100px;
-  height: 30px;
+#orden {
+  background-color: #80461b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#orden:hover {
+  background-color: #5e3414;
+}
+
+#orden:active {
+  transform: scale(0.9);
 }
 
 </style>
