@@ -92,8 +92,8 @@
                         </div>
                         <v-form>
                           <v-text-field
-                            label="Name"
-                            name="Name"
+                            label="UserName"
+                            name="UserName"
                             type="text"
                             color="teal accent-3"
                           />
@@ -151,4 +151,25 @@ export default {
 .v-main{
   padding: 0px;
 }
+
+.v-application .teal--text.text--accent-3{
+  color :#80461b !important;
+}
+
+.v-application .teal {
+    background-color: #80461b !important;
+    border-color: #80461b !important;
+}
+
+.v-application .teal.accent-3 {
+    background-color: #80461b !important;
+    border-color: #80461b !important;
+}
+
+.v-application .mt-12 {
+     margin-top: 80px !important; 
+}
+
+
+
 </style>

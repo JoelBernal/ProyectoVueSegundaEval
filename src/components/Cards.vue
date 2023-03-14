@@ -1,8 +1,7 @@
 <template>
   <v-container fluid>
-    <button id="orden" @click="fetchOrdenarLibros"> Ordenar por Precio </button>
     <v-row no-gutters>
-      <v-col v-for="(item) in libro" :key="item" cols="12" sm="15">
+      <v-col v-for="(item) in libro" :key="item" cols="12" sm="4">
         <v-card id="tarjeta" style="margin-bottom: 30px; " class="mx-auto" max-width="400" tile>
           <v-img class="align-end text-white" height="200" :src="item.image" cover>
             <img src="https://tse4.mm.bing.net/th?id=OIP.Yhvj0zPqOsS3B2ZFeha44gAAAA&pid=Api&P=0" alt="foto libros">
@@ -61,22 +60,6 @@ export default {
   margin-left: 300px
 }
 
-#orden {
-  background-color: #80461b;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
 
-#orden:hover {
-  background-color: #5e3414;
-}
-
-#orden:active {
-  transform: scale(0.9);
-}
 
 </style>

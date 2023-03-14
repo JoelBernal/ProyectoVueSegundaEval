@@ -2,7 +2,7 @@
   <v-app>
     <v-footer color="green" dark>
       <v-row justify="center" class="my-4 text-center">
-        <v-col cols="12">Bienvenido a Librerias Paco. <br> Aqui puedes encontrar todos los libros que desees con opcion de compra.
+        <v-col cols="12" style="font-family: Georgia, 'Times New Roman', Times, serif"><h3>Bienvenido a Librerias Paco. <br> Aqui puedes encontrar todos los libros que desees con opcion de compra.</h3>
         </v-col>
         <v-col cols="12">
           <v-btn v-for="icon in icons" :key="icon" text dark>

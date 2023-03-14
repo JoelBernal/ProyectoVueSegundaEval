@@ -3,8 +3,8 @@
     <v-navigation-drawer app>
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title class="text-h6"> NOMBRE PAGINA </v-list-item-title>
-          <v-list-item-subtitle> Navigation drawers</v-list-item-subtitle>
+          <v-list-item-title class="text-h6">NOMBRE PAGINA</v-list-item-title>
+          <v-list-item-subtitle>Navigation drawers</v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
       <v-divider></v-divider>
@@ -19,25 +19,48 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+        <button id="orden" @click="fetchOrdenarLibros">Ordenar por Precio</button>
+      </div>
+
       <LibrosForm></LibrosForm>
     </v-navigation-drawer>
   </v-app>
 </template>
 
 <script>
-import LibrosForm from './librosForm.vue';
+import LibrosForm from "./librosForm.vue";
 
 export default {
-    name: "App",
-    data: () => ({
-        items: [
-            { title: "Libros", icon: "mdi-book" },
-            { title: "Librerias", icon: "mdi-view-dashboard" },
-            { title: "Ajustes", icon: "mdi-cog" },
-        ],
-    }),
-    components: { LibrosForm }
+  name: "App",
+  data: () => ({
+    items: [
+      { title: "Libros", icon: "mdi-book" },
+      { title: "Librerias", icon: "mdi-view-dashboard" },
+      { title: "Ajustes", icon: "mdi-cog" },
+    ],
+  }),
+  components: { LibrosForm },
 };
 </script>
 
-<style></style>
+<style>
+#orden {
+  background-color: #80461b;
+  color: #fff;
+  border: none;
+  padding: 15px 40px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-radius: 10px;
+}
+
+#orden:hover {
+  background-color: #5e3414;
+}
+
+#orden:active {
+  transform: scale(0.9);
+}
+</style>
