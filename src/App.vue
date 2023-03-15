@@ -16,6 +16,8 @@ export default {
 
   methods:{
     ...mapActions(['fetchLibros'])
+   
+    
   },
 
    data: () => ({

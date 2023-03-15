@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row no-gutters>
-      <v-col v-for="(item) in libro" :key="item" cols="12" sm="4">
+      <v-col v-for="(item) in libro" :key="item.id" cols="12" sm="4">
         <v-card id="tarjeta" style="margin-bottom: 30px; " class="mx-auto" max-width="400" tile>
           <v-img class="align-end text-white" height="200" :src="item.image" cover>
             <img src="https://tse4.mm.bing.net/th?id=OIP.Yhvj0zPqOsS3B2ZFeha44gAAAA&pid=Api&P=0" alt="foto libros">
@@ -13,10 +13,13 @@
             <div>Autor: {{ item.autor }}</div>
             <div>Paginas: {{ item.paginas }}</div>
             <div>Precio: {{ item.precio }}</div>
+            <div>Id: {{ item.id }} </div>
           </v-card-text>
 
           <v-card-actions>
             <v-btn color="orange">Comprar</v-btn>
+            <v-btn color="red"  @click="eliminarLibro(item.id)">Borrar</v-btn>
+
           </v-card-actions>
         </v-card>
       </v-col>
@@ -28,12 +31,14 @@
 import store from "@/store/store.js"
 import { mapState, mapActions } from 'vuex';
 
+
 export default {
   name: "Cards",
   methods: {
-    ...mapActions([store.dispatch("fetchLibros")])
-  },
+    ...mapActions([store.dispatch("fetchLibros")]),
+    ...mapActions(["eliminarLibro"]),
 
+  },
   computed: {
     user() {
       return this.libro
