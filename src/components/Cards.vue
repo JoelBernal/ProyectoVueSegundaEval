@@ -4,6 +4,7 @@
       <v-button id="orden" @click="OrdenarPrecioPorDefecto">Ordenar por Precio: Por defecto</v-button>
       <v-button id="orden" @click="OrdenarPrecioMenorMayor">Ordenar por Precio: Mayor a menor</v-button>
       <v-button id="orden" @click="OrdenarPrecioMayorMenor">Ordenar por Precio: Menor a mayor</v-button>
+      <!-- <BotonOrdenarPrecio></BotonOrdenarPrecio> -->
     </div>
 
     <div>
@@ -40,9 +41,14 @@
 <script>
 import store from "@/store/store.js";
 import { mapState, mapActions } from "vuex";
+// import BotonOrdenarPrecio from "./BotonOrdenarPrecio"
+// import LibrosForm from "./librosForm.vue";
 
 export default {
   name: "Cards",
+  components: {
+    // BotonOrdenarPrecio
+  },
   methods: {
     ...mapActions([store.dispatch("fetchLibros")]),
     ...mapActions(["eliminarLibro"]),
