@@ -19,9 +19,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-      <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-     
-      </div>
+      <div style="display: flex; justify-content: center; margin-bottom: 20px;"></div>
 
       <LibrosForm></LibrosForm>
     </v-navigation-drawer>
@@ -30,33 +28,29 @@
 
 <script>
 import LibrosForm from "./librosForm.vue";
-import store from "@/store/store.js"
-import { mapState, mapActions } from 'vuex';
+import store from "@/store/store.js";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "App",
   data: () => ({
     items: [
-      { title: "Libros", icon: "mdi-book" },
-      { title: "Librerias", icon: "mdi-view-dashboard" },
-      { title: "Ajustes", icon: "mdi-cog" },
+      { title: "Libros", icon: "mdi-book", href: "" },
+      { title: "Librerias", icon: "mdi-view-dashboard", href: "" },
+      { title: "Ajustes", icon: "mdi-cog", href: "https://github.com/JoelBernal/ProyectoVueSegundaEval"},
     ],
   }),
   components: { LibrosForm },
 
- 
-
   methods: {
     ...mapActions([store.dispatch("fetchOrdenarLibros")]),
-    
   },
   computed: {
     user() {
-      return this.libro
+      return this.libro;
     },
     ...mapState(["libro"]),
   },
-
 };
 </script>
 

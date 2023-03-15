@@ -23,8 +23,9 @@ export default {
       menuItems: [
         { title: "Home", path: "/home", icon: "home" },
         { title: "Products", path: "/products", icon: "products" },
-        { title: "Abous Us", path: "/Abous Us", icon: "Abous Us" },
-        { title: "Contact Us", path: "/Contact Us", icon: "Contact Us" },
+        { title: "Products", path: "/products", icon: "products" },
+        // { title: "Abous Us", path: "/Abous Us", icon: "Abous Us" },
+        // { title: "Contact Us", path: "/Contact Us", icon: "Contact Us" },
         { title: "Sign In", path: "/login", icon: "face" },
         { title: "Sign Up", path: "/signin", icon: "lock_open" },
       ],
