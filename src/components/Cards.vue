@@ -1,6 +1,9 @@
 <template>
   <v-container fluid>
+    <v-button id="orden" @click="fetchOrdenarLibros">Ordenar por Precio</v-button>
+    
     <v-row no-gutters>
+      
       <v-col v-for="(item) in libro" :key="item.id" cols="12" sm="4">
         <v-card id="tarjeta" style="margin-bottom: 30px; " class="mx-auto" max-width="400" tile>
           <v-img class="align-end text-white" height="200" :src="item.image" cover>
@@ -37,7 +40,7 @@ export default {
   methods: {
     ...mapActions([store.dispatch("fetchLibros")]),
     ...mapActions(["eliminarLibro"]),
-
+    ...mapActions([("fetchOrdenarLibros")]),
   },
   computed: {
     user() {
@@ -65,6 +68,16 @@ export default {
   margin-left: 300px
 }
 
+#orden{
+  margin: 60px;
+}
 
+.v-btn__content{
 
+}
+
+.v-card__actions{
+  display: flex;
+  justify-content: center;
+}
 </style>

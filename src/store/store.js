@@ -7,7 +7,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        libro: []
+        libro: [],
+        libroOrdenar: []
     },
     mutations: {
         initLibro(state, libro) {
@@ -36,16 +37,19 @@ export default new Vuex.Store({
         },
 
         fetchOrdenarLibros({ commit }) {
+            console.log("Se editan los datos")
+             fetch('https://localhost:7222/Libros/OrdenarPorPrecio-BBDD')
+             
+                .then(response =>{return response.json()})
+                
+                .then(data => {
 
-            fetch('https://localhost:7222/Libros/OrdenarPorPrecio-BBDD')
-
-                .then(response => response.json())
-
-                .then(response => {
-
-                    commit("initOrdenarLibro", response)
+                    commit("initLibro", data)
 
                 })
+                .catch(error => {
+                    console.error(error);
+                  })
 
         },
 

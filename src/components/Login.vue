@@ -79,14 +79,14 @@
                       <v-card-text class="mt-12">
                         <h1 class="text-center display-2 teal--text text--accent-3">Crear cuenta</h1>
                         <div class="text-center mt-4">
-                          <v-btn class="mx-2" fab color="black" outlined>
+                          <v-btn id="botones" class="mx-2" fab color="black" outlined>
                             <v-icon>fab fa-facebook-f</v-icon>
                           </v-btn>
 
-                          <v-btn class="mx-2" fab color="black" outlined>
+                          <v-btn id="botones" class="mx-2" fab color="black" outlined>
                             <v-icon>fab fa-google-plus-g</v-icon>
                           </v-btn>
-                          <v-btn class="mx-2" fab color="black" outlined>
+                          <v-btn id="botones" class="mx-2" fab color="black" outlined>
                             <v-icon>fab fa-linkedin-in</v-icon>
                           </v-btn>
                         </div>
@@ -170,6 +170,9 @@ export default {
      margin-top: 80px !important; 
 }
 
+#botones{
+  background-color: #80461b !important;
+}
 
 
 </style>

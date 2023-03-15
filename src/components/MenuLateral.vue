@@ -20,7 +20,7 @@
         </v-list-item>
       </v-list>
       <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-        <button id="orden" @click="fetchOrdenarLibros">Ordenar por Precio</button>
+     
       </div>
 
       <LibrosForm></LibrosForm>
@@ -30,6 +30,8 @@
 
 <script>
 import LibrosForm from "./librosForm.vue";
+import store from "@/store/store.js"
+import { mapState, mapActions } from 'vuex';
 
 export default {
   name: "App",
@@ -41,6 +43,20 @@ export default {
     ],
   }),
   components: { LibrosForm },
+
+ 
+
+  methods: {
+    ...mapActions([store.dispatch("fetchOrdenarLibros")]),
+    
+  },
+  computed: {
+    user() {
+      return this.libro
+    },
+    ...mapState(["libro"]),
+  },
+
 };
 </script>
 
