@@ -8,6 +8,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     libro: [],
+    usuarios: [],
     libroOrdenar: []
   },
   mutations: {
@@ -19,8 +20,13 @@ export default new Vuex.Store({
     },
     eliminarLibro(state, id) {
       state.libro = state.libro.filter((libro) => libro.id != id)
-    }
+    },
+    initUsuarios(state, usuarios) {
+      state.usuarios = usuarios;
+    },
   },
+
+
   actions: {
     fetchLibros({ commit }) {
 
@@ -31,6 +37,20 @@ export default new Vuex.Store({
         .then(response => {
 
           commit("initLibro", response)
+
+        })
+
+    },
+
+    fetchUsuarios({ commit }) {
+
+      fetch('https://localhost:7222/Clientes')
+
+        .then(response => { return response.json() })
+
+        .then(response => {
+
+          commit("initUsuarios", response)
 
         })
 

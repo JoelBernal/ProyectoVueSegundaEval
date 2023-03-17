@@ -1,10 +1,10 @@
 <template>
   <v-container fluid>
     <div class="botonOrden">
-      <v-button id="orden" @click="OrdenarPrecioPorDefecto">Ordenar por Precio: Por defecto</v-button>
-      <v-button id="orden" @click="OrdenarPrecioMenorMayor">Ordenar por Precio: Mayor a menor</v-button>
-      <v-button id="orden" @click="OrdenarPrecioMayorMenor">Ordenar por Precio: Menor a mayor</v-button>
-      <!-- <BotonOrdenarPrecio></BotonOrdenarPrecio> -->
+      <v-button id="orden" @click="OrdenarPrecioPorDefecto(); dialog = true">Ordenar por defecto</v-button>
+      <v-button id="orden" @click="OrdenarPrecioMenorMayor(); dialog = true">Ordenar por Precio: Mayor a menor</v-button>
+      <v-button id="orden" @click="OrdenarPrecioMayorMenor(); dialog = true">Ordenar por Precio: Menor a mayor</v-button>
+      
     </div>
 
     <div>
@@ -12,10 +12,7 @@
         <v-col v-for="(item) in libro" :key="item.id" cols="12" sm="4">
           <v-card id="tarjeta" style="margin-bottom: 30px; " class="mx-auto" max-width="400" tile>
             <v-img class="align-end text-white" height="200" :src="item.image" cover>
-              <img
-                src="https://tse4.mm.bing.net/th?id=OIP.Yhvj0zPqOsS3B2ZFeha44gAAAA&pid=Api&P=0"
-                alt="foto libros"
-              />
+              <img src="https://tse4.mm.bing.net/th?id=OIP.Yhvj0zPqOsS3B2ZFeha44gAAAA&pid=Api&P=0" alt="foto libros" />
               <v-card-title>{{ item.titulo }}</v-card-title>
             </v-img>
             <v-card-subtitle class="pt-4">Fecha de publicacion: {{ item.fechaPublicacion }}</v-card-subtitle>
@@ -35,26 +32,57 @@
         </v-col>
       </v-row>
     </div>
+
+
+    <div class="text-center" >
+    <v-dialog
+      v-model="dialog"
+      width="auto"
+    >
+    
+
+      <v-card>
+        <v-card-text >
+          <h3>Orden de los libros cambiado, disfrute de nuestro catálogo</h3> 
+        </v-card-text>
+        <v-card-actions style="color: white;">
+          <v-btn color="#80461b " block @click="dialog = false">Cerrar</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </div>
+
+ 
   </v-container>
 </template>
 
 <script>
 import store from "@/store/store.js";
 import { mapState, mapActions } from "vuex";
-// import BotonOrdenarPrecio from "./BotonOrdenarPrecio"
-// import LibrosForm from "./librosForm.vue";
+
 
 export default {
   name: "Cards",
   components: {
-    // BotonOrdenarPrecio
+
   },
+
+  data () {
+      return {
+        dialog: false,
+      }
+    },
+
   methods: {
     ...mapActions([store.dispatch("fetchLibros")]),
     ...mapActions(["eliminarLibro"]),
     ...mapActions(["OrdenarPrecioMayorMenor"]),
     ...mapActions(["OrdenarPrecioMenorMayor"]),
     ...mapActions(["OrdenarPrecioPorDefecto"]),
+
+ 
+
+
   },
   computed: {
     user() {
@@ -89,11 +117,15 @@ export default {
   margin-bottom: 30px;
 }
 
-.v-btn__content {
-}
+.v-btn__content {}
 
 .v-card__actions {
   display: flex;
   justify-content: center;
 }
+
+.theme--light.v-btn {
+    color: white;
+}
+
 </style>
