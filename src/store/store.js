@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-var endpoint = "https://localhost:7222/Libros/GetDatosBBDD"
+
 
 Vue.use(Vuex);
 
@@ -30,7 +30,7 @@ export default new Vuex.Store({
   actions: {
     fetchLibros({ commit }) {
 
-      fetch(endpoint)
+      fetch('https://pruebaapi1.azurewebsites.net/Libros')
 
         .then(response => { return response.json() })
 
@@ -44,7 +44,7 @@ export default new Vuex.Store({
 
     fetchUsuarios({ commit }) {
 
-      fetch('https://localhost:7222/Clientes')
+      fetch('https://pruebaapi1.azurewebsites.net/Clientes')
 
         .then(response => { return response.json() })
 
@@ -59,7 +59,7 @@ export default new Vuex.Store({
     //Ordenar precio de mayor a menor
     OrdenarPrecioMayorMenor({ commit }) {
       console.log("Se editan los datos")
-      fetch('https://localhost:7222/Libros/OrdenarPorPrecio-BBDD')
+      fetch('https://pruebaapi1.azurewebsites.net/Libros?orderBy=PrecioAscendente')
 
         .then(response => { return response.json() })
 
@@ -77,7 +77,7 @@ export default new Vuex.Store({
     //Ordenar precio de mayor a menor
     OrdenarPrecioMenorMayor({ commit }) {
       console.log("Se editan los datos")
-      fetch('https://localhost:7222/Libros/OrdenarPorPrecio-BBDD-MayorMenor')
+      fetch('https://pruebaapi1.azurewebsites.net/Libros?orderBy=PrecioDescendente')
 
         .then(response => { return response.json() })
 
@@ -95,7 +95,7 @@ export default new Vuex.Store({
     //Ordenar precio por defecto
     OrdenarPrecioPorDefecto({ commit }) {
       console.log("Se editan los datos")
-      fetch('https://localhost:7222/Libros/GetDatosBBDD')
+      fetch('https://pruebaapi1.azurewebsites.net/Libros')
 
         .then(response => { return response.json() })
 
@@ -115,7 +115,7 @@ export default new Vuex.Store({
     eliminarLibro({ commit }, id) {
 
       console.log("Este est mi id a eliminar" + id)
-      return fetch(`https://localhost:7222/Libros/DeleteBBDD/${id}`, {
+      return fetch(`https://pruebaapi1.azurewebsites.net/Libros/${id}`, {
         method: 'DELETE'
       })
 
